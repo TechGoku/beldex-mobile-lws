@@ -11,17 +11,17 @@ import WalletsSelectView from '../../WalletsList/Views/WalletsSelectView.web'
 import commonComponents_activityIndicators from '../../MMAppUICommonComponents/activityIndicators.web'
 import commonComponents_actionButtons from '../../MMAppUICommonComponents/actionButtons.web'
 import JustSentTransactionDetailsView from './JustSentTransactionDetailsView.web'
-import monero_sendingFunds_utils from '@mymonero/mymonero-sendfunds-utils'
+import utils from '@bdxi/beldex-sendfunds-utils'
 import monero_openalias_utils from '../../OpenAlias/monero_openalias_utils'
-import monero_config from '@mymonero/mymonero-monero-config'
-import monero_amount_format_utils from '@mymonero/mymonero-money-format'
+import beldex_config from '@bdxi/beldex-config'
+import beldex_amount_format_utils from '@bdxi/beldex-money-format'
 import jsQR from 'jsqr'
 // TODO: move to @mymonero/mymonero-request-utils once v2.0.3 released
 // import monero_requestURI_utils from '@mymonero/mymonero-request-utils'
 import monero_requestURI_utils from '../../MoneroUtils/monero_requestURI_utils'
 import Currencies from '../../CcyConversionRates/Currencies'
 import YatMoneroLookup from '@mymonero/mymonero-yat-lookup/index.esm'
-import { BigInteger as JSBigInt } from '@mymonero/mymonero-bigint' // important: grab defined export
+import { BigInteger as JSBigInt } from '@bdxi/beldex-bigint' // important: grab defined export
 
 import { CapacitorQRScanner } from '@johnbraum/capacitor-qrscanner';
 const yatMoneroLookup = YatMoneroLookup.YatMoneroLookup()
@@ -514,7 +514,7 @@ class SendFundsView extends View {
       //
       const selectLayer = document.createElement('select')
       {
-        const defaultValue = monero_sendingFunds_utils.default_priority()
+        const defaultValue = utils.default_priority()
         const values =
 				[
 				  1,
@@ -965,7 +965,7 @@ class SendFundsView extends View {
     if (xmr_estMaxAmount == null || typeof xmr_estMaxAmount === 'undefined') {
       return null
     }
-    const xmr_estMaxAmount_str = monero_amount_format_utils.formatMoney(xmr_estMaxAmount)
+    const xmr_estMaxAmount_str = beldex_amount_format_utils.formatMoney(xmr_estMaxAmount)
     //
     const displayCcySymbol = self.ccySelectLayer.Component_selected_ccySymbol()
     if (displayCcySymbol != Currencies.ccySymbolsByCcy.XMR) {
@@ -1000,7 +1000,7 @@ class SendFundsView extends View {
   _new_estimatedNetworkFee_displayString () {
     const self = this
     const estimatedTotalFee_JSBigInt = self.new_xmr_estFeeAmount()
-    const estimatedTotalFee_str = monero_amount_format_utils.formatMoney(estimatedTotalFee_JSBigInt)
+    const estimatedTotalFee_str = beldex_amount_format_utils.formatMoney(estimatedTotalFee_JSBigInt)
     const estimatedTotalFee_moneroAmountDouble = parseFloat(estimatedTotalFee_str)
 
     // const estimatedTotalFee_moneroAmountDouble = 0.028
@@ -1186,9 +1186,9 @@ class SendFundsView extends View {
       )
       finalizable_text = `~ ${displayFormattedAmount} ${displayCcySymbol}`
     } else {
-      const moneroAmountDouble_atomicPlaces = xmrAmountDouble * Math.pow(10, monero_config.coinUnitPlaces)
+      const moneroAmountDouble_atomicPlaces = xmrAmountDouble * Math.pow(10, beldex_config.coinUnitPlaces)
       const moneroAmount = new JSBigInt(moneroAmountDouble_atomicPlaces)
-      const formatted_moneroAmount = monero_amount_format_utils.formatMoney(moneroAmount)
+      const formatted_moneroAmount = beldex_amount_format_utils.formatMoney(moneroAmount)
       finalizable_text = `= ${formatted_moneroAmount} ${Currencies.ccySymbolsByCcy.XMR}`
     }
     const final_text = finalizable_text
@@ -1243,7 +1243,7 @@ class SendFundsView extends View {
     }
     {
       const sel = self.prioritySelectLayer
-      const defaultVal = monero_sendingFunds_utils.default_priority()
+      const defaultVal = utils.default_priority()
       const opts = sel.options
       for (let j = 0; j < opts.length; j++) {
         const opt = opts[j]

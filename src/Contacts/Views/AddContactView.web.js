@@ -1,7 +1,7 @@
 'use strict'
 
 import ContactFormView from './ContactFormView.web'
-import monero_paymentID_utils from '@mymonero/mymonero-paymentid-utils'
+import monero_paymentID_utils from '@bdxi/beldex-paymentid-utils'
 import commonComponents_activityIndicators from '../../MMAppUICommonComponents/activityIndicators.web'
 import commonComponents_actionButtons from '../../MMAppUICommonComponents/actionButtons.web'
 import commonComponents_forms from '../../MMAppUICommonComponents/forms.web'

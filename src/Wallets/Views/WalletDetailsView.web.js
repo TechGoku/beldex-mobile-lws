@@ -1,7 +1,7 @@
 'use strict'
 
-import monero_config from '@mymonero/mymonero-monero-config'
-import { BigInteger as JSBigInt } from '@mymonero/mymonero-bigint'
+import beldex_config from '@bdxi/beldex-config'
+import { BigInteger as JSBigInt } from '@bdxi/beldex-bigint'
 import View from '../../Views/View.web'
 import commonComponents_navigationBarButtons from '../../MMAppUICommonComponents/navigationBarButtons.web'
 import commonComponents_tables from '../../MMAppUICommonComponents/tables.web'
@@ -16,7 +16,7 @@ import EditWalletView from './EditWalletView.web'
 import TransactionDetailsView from './TransactionDetailsView.web'
 import FundsRequestQRDisplayView from '../../RequestFunds/Views/FundsRequestQRDisplayView.web'
 import Currencies from '../../CcyConversionRates/Currencies'
-import monero_amount_format_utils from '@mymonero/mymonero-money-format'
+import beldex_amount_format_utils from '@bdxi/beldex-money-format'
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
 import { Plugins } from '@capacitor/core'
 const { Toast } = Plugins
@@ -147,7 +147,7 @@ class WalletDetailsView extends View {
       if (displayCcySymbol == Currencies.ccySymbolsByCcy.XMR) {
         // NOTE: checking if ccy is XMR again to catch displayCurrencyAmountDouble_orNull=null fallthrough case from alt display ccy
         const raw_balanceString = wallet.Balance_FormattedString()
-        const coinUnitPlaces = monero_config.coinUnitPlaces
+        const coinUnitPlaces = beldex_config.coinUnitPlaces
         const raw_balanceString__components = raw_balanceString.split('.')
         if (raw_balanceString__components.length == 1) {
           const balance_aspect_integer = raw_balanceString__components[0]
@@ -840,7 +840,7 @@ class WalletDetailsView extends View {
             // div.style.webkitUserSelect = "all" // decided to comment this because it interferes with cell click
             const received_JSBigInt = tx.total_received ? (typeof tx.total_received === 'string' ? new JSBigInt(tx.total_received) : tx.total_received) : new JSBigInt('0')
             const sent_JSBigInt = tx.total_sent ? (typeof tx.total_sent === 'string' ? new JSBigInt(tx.total_sent) : tx.total_sent) : new JSBigInt('0')
-            div.innerHTML = monero_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
+            div.innerHTML = beldex_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
           }
           { // Date
             const div = document.createElement('div')
@@ -1105,7 +1105,7 @@ class WalletDetailsView extends View {
       function (tx, i) {
         const received_JSBigInt = tx.total_received ? (typeof tx.total_received === 'string' ? new JSBigInt(tx.total_received) : tx.total_received) : new JSBigInt('0')
         const sent_JSBigInt = tx.total_sent ? (typeof tx.total_sent === 'string' ? new JSBigInt(tx.total_sent) : tx.total_sent) : new JSBigInt('0')
-        const amountString = monero_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
+        const amountString = beldex_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
         //
         const payment_id = `${tx.payment_id || ''}`
         const status = `${tx.isFailed ? 'REJECTED' : (tx.isConfirmed !== true || tx.isUnlocked !== true ? 'PENDING' : 'CONFIRMED')}`

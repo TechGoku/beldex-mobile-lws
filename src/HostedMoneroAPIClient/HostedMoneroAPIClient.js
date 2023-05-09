@@ -1,4 +1,4 @@
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger // important: grab defined export
+const JSBigInt = require('@bdxi/beldex-bigint').BigInteger // important: grab defined export
 const capacitorHttp = require('@capacitor-community/http') // used to work around CORS for LWSß
 const net_service_utils = require('@mymonero/mymonero-net-service-utils')
 

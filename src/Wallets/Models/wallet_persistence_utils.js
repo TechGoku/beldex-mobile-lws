@@ -1,6 +1,6 @@
 import persistable_object_utils from '../../DocumentPersister/persistable_object_utils'
 
-import { BigInteger as JSBigInt } from '@mymonero/mymonero-bigint'
+import { BigInteger as JSBigInt } from '@bdxi/beldex-bigint'
 
 const CollectionName = 'Wallets'
 // console.log("Wallet persistence loaded")

@@ -34,8 +34,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'node_modules/@mymonero/mymonero-app-bridge/MyMoneroLibAppCpp_WASM.js', to: '../dist/assets/MoneroLibAppCpp_WASM.js' },
-        { from: 'node_modules/@mymonero/mymonero-app-bridge/MyMoneroLibAppCpp_WASM.wasm', to: '../dist/assets/MyMoneroLibAppCpp_WASM.wasm' },
+        { from: 'node_modules/@bdxi/beldex-app-bridge/MyMoneroLibAppCpp_WASM.js', to: '../dist/assets/MoneroLibAppCpp_WASM.js' },
+        { from: 'node_modules/@bdxi/beldex-app-bridge/MyMoneroLibAppCpp_WASM.wasm', to: '../dist/assets/MyMoneroLibAppCpp_WASM.wasm' },
         { from: 'src/index.html', to: '../dist/index.html' },
         { from: '*', to: '../dist/assets/img', context: path.resolve(__dirname, 'src', 'assets/img') }
       ]

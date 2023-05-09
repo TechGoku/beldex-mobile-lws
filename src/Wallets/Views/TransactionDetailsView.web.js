@@ -4,8 +4,8 @@ import View from '../../Views/View.web'
 import commonComponents_tables from '../../MMAppUICommonComponents/tables.web'
 import commonComponents_forms from '../../MMAppUICommonComponents/forms.web'
 import commonComponents_navigationBarButtons from '../../MMAppUICommonComponents/navigationBarButtons.web'
-import monero_amount_format_utils from '@mymonero/mymonero-money-format'
-import { BigInteger as JSBigInt } from '@mymonero/mymonero-bigint'
+import beldex_amount_format_utils from '@bdxi/beldex-money-format'
+import { BigInteger as JSBigInt } from '@bdxi/beldex-bigint'
 
 class TransactionDetailsView extends View {
   constructor (options, context) {
@@ -312,7 +312,7 @@ class TransactionDetailsView extends View {
     const tx = self.transaction
     const received_JSBigInt = tx.total_received ? (typeof tx.total_received === 'string' ? new JSBigInt(tx.total_received) : tx.total_received) : new JSBigInt('0')
     const sent_JSBigInt = tx.total_sent ? (typeof tx.total_sent === 'string' ? new JSBigInt(tx.total_sent) : tx.total_sent) : new JSBigInt('0')
-    return monero_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
+    return beldex_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
   }
 
   Navigation_New_RightBarButtonView () {
@@ -415,7 +415,7 @@ class TransactionDetailsView extends View {
       const tx = self.transaction
       const received_JSBigInt = tx.total_received ? (typeof tx.total_received === 'string' ? new JSBigInt(tx.total_received) : tx.total_received) : new JSBigInt('0')
       const sent_JSBigInt = tx.total_sent ? (typeof tx.total_sent === 'string' ? new JSBigInt(tx.total_sent) : tx.total_sent) : new JSBigInt('0')
-      const value = monero_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
+      const value = beldex_amount_format_utils.formatMoney(received_JSBigInt.subtract(sent_JSBigInt))
       let color
 			if (isOutgoing) {
         color = '#F97777'

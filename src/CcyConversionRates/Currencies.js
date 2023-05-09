@@ -1,7 +1,7 @@
 'use strict'
 
-import monero_config from '@mymonero/mymonero-monero-config'
-import monero_amount_format_utils from '@mymonero/mymonero-money-format'
+import beldex_config from '@bdxi/beldex-config'
+import beldex_amount_format_utils from '@bdxi/beldex-money-format'
 
 const ccySymbolsByCcy =
 {
@@ -56,7 +56,7 @@ const hasAtomicUnits = function (ccySymbol) {
 }
 const unitsForDisplay = function (ccySymbol) {
   if (ccySymbol == ccySymbolsByCcy.XMR) {
-    return monero_config.coinUnitPlaces
+    return beldex_config.coinUnitPlaces
   }
   return 2
 }
@@ -181,7 +181,7 @@ const displayStringComponentsFrom = function (
   displayCcySymbol
 ) {
   const XMR = ccySymbolsByCcy.XMR
-  const xmr_amount_str = monero_amount_format_utils.formatMoney(xmr_amount_JSBigInt)
+  const xmr_amount_str = beldex_amount_format_utils.formatMoney(xmr_amount_JSBigInt)
   if (displayCcySymbol != XMR) {
     // TODO: using doubles here is not very good, and must be replaced with JSBigInts to support small amounts
     const xmr_amount_double = parseFloat(xmr_amount_str)

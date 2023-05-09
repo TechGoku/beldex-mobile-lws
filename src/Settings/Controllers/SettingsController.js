@@ -10,7 +10,7 @@ const CollectionName = 'Settings'
 const k_defaults_record =
 {
   specificAPIAddressURLAuthority: '',
-  appTimeoutAfterS: 6 * 60, // 6 mins
+  appTimeoutAfterS: 15 * 60, // 15 mins
   invisible_hasAgreedToTermsOfCalculatedEffectiveMoneroAmount: false,
   displayCcySymbol: Currencies.ccySymbolsByCcy.XMR, // default
   authentication_requireWhenSending: true,

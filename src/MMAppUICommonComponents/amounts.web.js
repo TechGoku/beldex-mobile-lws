@@ -3,7 +3,7 @@
 import commonComponents_tables from './tables.web'
 import commonComponents_forms from './forms.web'
 import commonComponents_ccySelect from './ccySelect.web'
-import monero_config from '@mymonero/mymonero-monero-config'
+import beldex_config from '@bdxi/beldex-config'
 
 function New_AmountInputFieldPKG (
   context,
@@ -71,7 +71,7 @@ function New_AmountInputFieldPKG (
       }
     }
     { // disallow input which is toooo long. some values are out of spec
-      const longestKnown_coinUnitPlaces = monero_config.coinUnitPlaces
+      const longestKnown_coinUnitPlaces = beldex_config.coinUnitPlaces
       const maxText_length = longestKnown_coinUnitPlaces + 2 + 1
       // ^-- I figure 14 numerals is a pretty good upper bound guess for inputs no matter what the currency… I might be wrong…
       if (mutable_candidate_valueLayer_value.length > maxText_length) {

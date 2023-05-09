@@ -3,7 +3,7 @@
 import ContactFormView from '../../Contacts/Views/ContactFormView.web'
 import commonComponents_tables from '../../MMAppUICommonComponents/tables.web'
 import commonComponents_activityIndicators from '../../MMAppUICommonComponents/activityIndicators.web'
-import monero_paymentID_utils from '@mymonero/mymonero-paymentid-utils'
+import monero_paymentID_utils from '@bdxi/beldex-paymentid-utils'
 import YatMoneroLookup from '@mymonero/mymonero-yat-lookup'
 const yatMoneroLookup = new YatMoneroLookup({})
 class EditContactFromContactsTabView extends ContactFormView {

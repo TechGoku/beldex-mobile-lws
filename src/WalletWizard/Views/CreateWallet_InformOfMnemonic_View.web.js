@@ -4,7 +4,7 @@ import commonComponents_forms from '../../MMAppUICommonComponents/forms.web'
 import commonComponents_navigationBarButtons from '../../MMAppUICommonComponents/navigationBarButtons.web'
 import commonComponents_walletMnemonicBox from '../../MMAppUICommonComponents/walletMnemonicBox.web'
 import commonComponents_hoverableCells from '../../MMAppUICommonComponents/hoverableCells.web'
-import mnemonic_languages from '@mymonero/mymonero-locales'
+import mnemonic_languages from '@bdxi/beldex-locales'
 import BaseView_AWalletWizardScreen from './BaseView_AWalletWizardScreen.web'
 
 class CreateWallet_InformOfMnemonic_View extends BaseView_AWalletWizardScreen {

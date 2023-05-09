@@ -1,6 +1,6 @@
 'use strict'
 
-import mnemonic_languages from '@mymonero/mymonero-locales'
+import mnemonic_languages from '@bdxi/beldex-locales'
 import PickCreateOrUseExisting_Landing_View from '../Views/PickCreateOrUseExisting_Landing_View.web'
 import UseExisting_MetaInfo_View from '../Views/UseExisting_MetaInfo_View.web'
 import CreateWallet_MetaInfo_View from '../Views/CreateWallet_MetaInfo_View.web'

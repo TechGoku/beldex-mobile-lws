@@ -1,9 +1,9 @@
 'use strict'
 
-import monero_config from '@mymonero/mymonero-monero-config'
+import beldex_config from '@bdxi/beldex-config'
 import openalias_utils from './openalias_utils'
 
-const currency_openAliasPrefix = monero_config.openAliasPrefix
+const currency_openAliasPrefix = beldex_config.openAliasPrefix
 
 function DoesStringContainPeriodChar_excludingAsXMRAddress_qualifyingAsPossibleOAAddress (address) {
   if (address)

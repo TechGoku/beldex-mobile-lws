@@ -49,4 +49,4 @@ http.createServer(function (request, response) {
     }
   })
 }).listen(9110)
-console.log('Server running at http://127.0.0.1:9110/')
+console.log('Web Server running at http://127.0.0.1:9110/')

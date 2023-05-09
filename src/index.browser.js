@@ -5,7 +5,7 @@ import './assets/css/clear.browser.css'
 
 import RootView from './MainWindow/Views/RootView' // electron uses .web files as it has a web DOM
 import setup_utils from './MMAppRendererSetup/renderer_setup.browser'
-import MyMoneroLibAppBridge from '@mymonero/mymonero-app-bridge'
+import MyMoneroLibAppBridge from '@bdxi/beldex-app-bridge'
 import indexContextBrowser from './MainWindow/Models/index_context.browser'
 import { App, URLOpenListenerEvent } from '@capacitor/app'
 import { Device } from '@capacitor/device'
@@ -24,8 +24,8 @@ window.BootApp = async function () { // encased in a function to prevent scope b
   // context
   MyMoneroLibAppBridge({}).then(function (coreBridge_instance) {
     const context = indexContextBrowser.NewHydratedContext({
-      nettype: 0,
-      apiUrl: 'api.mymonero.com',
+      nettype: 1,
+      apiUrl: 'api.beldex.dev',
       version: version,
       name: 'MyMonero',
       isDebug: isDebug,

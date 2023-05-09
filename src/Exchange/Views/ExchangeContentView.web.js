@@ -2,13 +2,13 @@
 
 import View from '../../Views/View.web'
 import commonComponents_navigationBarButtons from '../../MMAppUICommonComponents/navigationBarButtons.web'
-import { BigInteger as JSBigInt } from '@mymonero/mymonero-bigint' // important: grab defined expo
-import monero_amount_format_utils from '@mymonero/mymonero-money-format'
+import { BigInteger as JSBigInt } from '@bdxi/beldex-bigint' // important: grab defined expo
+import beldex_amount_format_utils from '@bdxi/beldex-money-format'
 import ExchangeUtils from '../../Exchange/Javascript/ExchangeUtilityFunctions'
 // import ExchangeLibrary from 'mymonero-exchange';
 // import ValidationLibrary from 'wallet-address-validator';
-import ExchangeHelper from '@mymonero/mymonero-exchange-helper'
-import PageTemplates from '@mymonero/mymonero-page-templates'
+import ExchangeHelper from '@bdxi/beldex-exchange-helper'
+import PageTemplates from '@bdxi/beldex-page-templates'
 const ExchangeLandingPage = PageTemplates.ExchangeLandingPage
 const exchangeHelper = new ExchangeHelper()
 
@@ -17,7 +17,7 @@ const handleOfferError = exchangeHelper.errorHelper.handleOfferError
 function newEstimatedNetworkFeeString (fee_JSBigInt) {
   const self = this
   const estimatedTotalFee_JSBigInt = fee_JSBigInt
-  const estimatedTotalFee_str = monero_amount_format_utils.formatMoney(estimatedTotalFee_JSBigInt)
+  const estimatedTotalFee_str = beldex_amount_format_utils.formatMoney(estimatedTotalFee_JSBigInt)
   const estimatedTotalFee_moneroAmountDouble = parseFloat(estimatedTotalFee_str)
 
   // const estimatedTotalFee_moneroAmountDouble = 0.028

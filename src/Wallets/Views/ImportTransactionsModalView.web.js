@@ -8,8 +8,8 @@ import commonComponents_amounts from '../../MMAppUICommonComponents/amounts.web'
 import commonComponents_navigationBarButtons from '../../MMAppUICommonComponents/navigationBarButtons.web'
 import commonComponents_tooltips from '../../MMAppUICommonComponents/tooltips.web'
 import WalletsSelectView from '../../WalletsList/Views/WalletsSelectView.web'
-import monero_amount_format_utils from '@mymonero/mymonero-money-format'
-import monero_sendingFunds_utils from '@mymonero/mymonero-sendfunds-utils'
+import beldex_amount_format_utils from '@bdxi/beldex-money-format'
+import utils from '@bdxi/beldex-sendfunds-utils'
 
 class ImportTransactionsModalView extends View {
   constructor (options, context) {
@@ -427,7 +427,7 @@ class ImportTransactionsModalView extends View {
       //
       self.amountInputLayer.value,
       false, // sweeping
-      monero_sendingFunds_utils.default_priority(),
+      utils.default_priority(),
       //
       function (str) // preSuccess_nonTerminal_statusUpdate_fn
       {
@@ -499,7 +499,7 @@ class ImportTransactionsModalView extends View {
             self.informationalHeaderLayer.innerHTML = '&nbsp;' // clear for now
             return
           }
-          const raw_formattedMoney = monero_amount_format_utils.formatMoney(import_fee__JSBigInt)
+          const raw_formattedMoney = beldex_amount_format_utils.formatMoney(import_fee__JSBigInt)
           {
             self.informationalHeaderLayer.innerHTML = `This requires a one-time import fee of ${raw_formattedMoney} XMR`
             //
