@@ -936,7 +936,7 @@ class SendFundsView extends View {
     const estimatedNetworkFee_JSBigInt = new JSBigInt(self.context.monero_utils.estimated_tx_network_fee(
       null, // deprecated - will be removed soon
       self._selected_simplePriority(),
-      '24658' // TODO: grab this from wallet via API request
+      '666','10000' // TODO: grab this from wallet via API request
     ))
     const estimatedTotalFee_JSBigInt = estimatedNetworkFee_JSBigInt // no tx hosting service fee
     //
