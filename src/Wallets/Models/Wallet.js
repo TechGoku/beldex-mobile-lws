@@ -753,7 +753,7 @@ class Wallet extends EventEmitter {
         self.isLoggingIn = false
         self.isLoggedIn = login__err == null
         self.login__new_address = new_address
-        self.login__generated_locally = received__generated_locally // now update this b/c the server may have pre-existing information
+        // self.login__generated_locally = received__generated_locally // now update this b/c the server may have pre-existing information
         self.account_scan_start_height = start_height // is actually the same thing - we should save this here so we can use it when calculating whether to show the import btn
         //
         self.regenerate_shouldDisplayImportAccountOption() // now this can be called

@@ -518,11 +518,9 @@ class SendFundsView extends View {
         const values =
 				[
 				  1,
-				  2,
-				  3,
-				  4
+				  5
 				]
-        const descriptions = ['Low', 'Medium', 'High', 'Very High']
+        const descriptions = ['Normal','Flash']
         const numberOf_values = values.length
         for (let i = 0; i < numberOf_values; i++) {
           const value = values[i]
