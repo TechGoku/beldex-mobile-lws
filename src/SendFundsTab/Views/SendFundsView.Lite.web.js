@@ -8,7 +8,7 @@ class SendFundsView extends SendFundsView_Base {
     const self = this
     const layer = commonComponents_contactPicker_Lite.New_contactPickerLayer_Lite(
       self.context,
-      'Email, domain, or Monero address',
+      'Beldex address',
       function (event) { // didFinishTypingInInput_fn
         self._didFinishTypingInContactPickerInput(event)
       }

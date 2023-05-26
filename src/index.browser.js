@@ -27,7 +27,7 @@ window.BootApp = async function () { // encased in a function to prevent scope b
       nettype: 1,
       apiUrl: 'api.beldex.dev',
       version: version,
-      name: 'MyMonero',
+      name: 'Beldex',
       isDebug: isDebug,
       Cordova_isMobile: false, // (this can be renamed or maybe deprecated)
       appDownloadLink_domainAndPath: 'mymonero.com',

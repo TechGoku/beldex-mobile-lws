@@ -3,7 +3,7 @@ import axios from 'axios';
 class ExchangeFunctions {
 
     constructor() {
-        this.apiUrl = "https://api.mymonero.com:8443/cx";
+        this.apiUrl = "https://api.beldex.dev:8443/cx";
         // this.apiVersion = "v3";
         // this.currencyToExchange = "xmr2btc";
         this.offer = {};

@@ -5,7 +5,7 @@ import commonComponents_navigationBarButtons from '../../MMAppUICommonComponents
 
 class ModalStandaloneAboutView extends RootView {
   Navigation_Title () {
-    return 'About MyMonero'
+    return 'About Beldex'
   }
 
   Navigation_New_LeftBarButtonView () {

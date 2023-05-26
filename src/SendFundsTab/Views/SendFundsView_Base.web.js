@@ -232,7 +232,7 @@ class SendFundsView extends View {
     {
       const labelLayer = commonComponents_forms.New_fieldTitle_labelLayer('FROM', self.context)
       {
-        const tooltipText = 'Monero makes transactions<br/>with your "available outputs",<br/>so part of your balance will<br/>be briefly locked and then<br/>returned as change.'
+        const tooltipText = 'Beldex makes transactions<br/>with your "available outputs",<br/>so part of your balance will<br/>be briefly locked and then<br/>returned as change.'
         const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
         const layer = view.layer
         labelLayer.appendChild(layer) // we can append straight to labelLayer as we don't ever change its innerHTML
@@ -319,7 +319,7 @@ class SendFundsView extends View {
       breakingDiv.appendChild(layer)
     }
     {
-      const tooltipText = 'Based on Monero network<br/>fee estimate (not final).<br/><br/>MyMonero does not charge<br/>a transfer service fee.'
+      const tooltipText = 'Based on Beldex network<br/>fee estimate (not final).<br/><br/>Beldex does not charge<br/>a transfer service fee.'
       const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
       const layer = view.layer
       breakingDiv.appendChild(layer)
@@ -498,7 +498,7 @@ class SendFundsView extends View {
       const labelLayer = commonComponents_forms.New_fieldTitle_labelLayer('PRIORITY', self.context)
       labelLayer.style.marginTop = '4px'
       {
-        const tooltipText = 'You can pay the Monero<br/>network a higher fee to<br/>have your transfers<br/>confirmed faster.'
+        const tooltipText = 'You can pay the Beldex<br/>network a flash fee to<br/>have your transfers<br/>confirmed faster.'
         const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
         const layer = view.layer
         labelLayer.appendChild(layer) // we can append straight to labelLayer as we don't ever change its innerHTML
@@ -903,7 +903,7 @@ class SendFundsView extends View {
   // Runtime - Accessors - Navigation
   //
   Navigation_Title () {
-    return 'Send Monero'
+    return 'Send Beldex'
   }
 
   Navigation_New_RightBarButtonView () {
@@ -1400,7 +1400,7 @@ class SendFundsView extends View {
     const wallet = self.walletSelectView.CurrentlySelectedRowItem
     {
       if (typeof wallet === 'undefined' || !wallet) {
-        _trampolineToReturnWithValidationErrorString('Please create a wallet to send Monero.')
+        _trampolineToReturnWithValidationErrorString('Please create a wallet to send Beldex.')
         return
       }
     }

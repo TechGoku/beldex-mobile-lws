@@ -407,7 +407,7 @@ class ImportTransactionsModalView extends View {
     //
     const wallet = self.walletSelectView.CurrentlySelectedRowItem
     if (typeof wallet === 'undefined' || !wallet) {
-      _trampolineToReturnWithValidationErrorString('Please create a wallet to send Monero.')
+      _trampolineToReturnWithValidationErrorString('Please create a wallet to send Beldex.')
       return
     }
     wallet.SendFunds(
@@ -503,7 +503,7 @@ class ImportTransactionsModalView extends View {
           {
             self.informationalHeaderLayer.innerHTML = `This requires a one-time import fee of ${raw_formattedMoney} XMR`
             //
-            const tooltipText = `Importing your wallet means the server will scan the entire Monero blockchain for your wallet's past transactions, then stay up-to-date.<br/><br/>As this process places heavy load on the server, import is triggered by sending a fee (e.g. from the original wallet) with the specific payment ID below to the server at e.g. ${self.approximate_importOAAddress}.`
+            const tooltipText = `Importing your wallet means the server will scan the entire Beldex blockchain for your wallet's past transactions, then stay up-to-date.<br/><br/>As this process places heavy load on the server, import is triggered by sending a fee (e.g. from the original wallet) with the specific payment ID below to the server at e.g. ${self.approximate_importOAAddress}.`
             const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
             const layer = view.layer
             self.informationalHeaderLayer.appendChild(layer) // we can append straight to layer as we don't ever change its innerHTML after this
@@ -530,7 +530,7 @@ class ImportTransactionsModalView extends View {
           }
           {
             // const command = `transfer 3 import.mymonero.com ${import_fee__JSBigInt} ${payment_id}`
-            const tooltipText = 'For convenience you may send the fee from MyMonero here, or the official CLI or GUI tools, or any other Monero wallet.<br/><br/>Please be sure to use the exact payment ID below, so the server knows which wallet to import.'
+            const tooltipText = 'For convenience you may send the fee from Beldex here, or the official CLI or GUI tools, or any other Beldex wallet.<br/><br/>Please be sure to use the exact payment ID below, so the server knows which wallet to import.'
             const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
             const layer = view.layer
             self.walletSelectLabelLayer.appendChild(layer) // we can append straight to layer as we don't ever change its innerHTML after this

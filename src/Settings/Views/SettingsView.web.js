@@ -80,7 +80,7 @@ class SettingsView extends View {
     const div = document.createElement('div')
     div.style.padding = '12px 0 12px 33px'
     const buttonView = commonComponents_tables.New_clickableLinkButtonView(
-      'ABOUT MYMONERO',
+      'ABOUT BELDEX',
       self.context,
       function () {
         const options = {}
@@ -303,7 +303,7 @@ class SettingsView extends View {
       div.appendChild(layer)
 
       const valueLayer = commonComponents_forms.New_fieldValue_textInputLayer(self.context, {
-        placeholderText: 'Leave blank to use mymonero.com'
+        placeholderText: 'Leave blank to use Beldex Server'
       })
       valueLayer.autocomplete = 'off'
       valueLayer.autocorrect = 'off'
@@ -489,7 +489,7 @@ class SettingsView extends View {
         }
         let msg
 
-        msg = 'Are you sure you want to delete your wallet data?\n\nNo account information that links you to your wallets is retained by MyMonero. Recovery will only be possible by using your mnemonic seed. MyMonero does not retain personally identifiable data, and our staff will never ask you to disclose your mnemonic seed.'
+        msg = 'Are you sure you want to delete your wallet data?\n\nNo account information that links you to your wallets is retained by Beldex. Recovery will only be possible by using your mnemonic seed. Beldex does not retain personally identifiable data, and our staff will never ask you to disclose your mnemonic seed.'
 
         self.context.windowDialogs.PresentQuestionAlertDialogWith(
           'Delete wallet and account data?',
@@ -636,7 +636,7 @@ class SettingsView extends View {
 
     if (mutable_value != '') {
       if (mutable_value.indexOf('.') == -1 && mutable_value.indexOf(':') == -1 && mutable_value.indexOf('localhost') == -1) {
-        preSubmission_validationError = 'Please enter a valid URL authority, e.g. api.mymonero.com.'
+        preSubmission_validationError = 'Please enter a valid URL authority, e.g. api.beldex.dev.'
       } else { // important else in the absence of reorganizing this code
         // strip http:// and https:// prefix here.. there's got to be a better way to do this..
         // ... probably not a good idea to naively strip "*://" prefix ... or is it?
@@ -771,10 +771,10 @@ class SettingsView extends View {
 
     if (self.serverURLInputLayer) {
       self.serverURLInputLayer.value = self.context.settingsController.specificAPIAddressURLAuthority || ''
-      if (self.context.settingsController.specificAPIAddressURLAuthority === 'https://api.mymonero.com') {
-        self.serverURL_setSuccessMessage('Set to mymonero.com')
+      if (self.context.settingsController.specificAPIAddressURLAuthority === 'https://api.beldex.dev') {
+        self.serverURL_setSuccessMessage('Set to Beldex')
       } else {
-        self.serverURL_setSuccessMessage('Custom server url set. Set to https://api.mymonero.com to use mymonero.com')
+        self.serverURL_setSuccessMessage('Custom server url set. Set to https://api.beldex.dev to use Beldex')
       }
     }
     // and now that the value is set…
@@ -886,7 +886,7 @@ class SettingsView extends View {
                   self.serverURL_connecting_activityIndicatorLayer.style.display = 'none'
                 })
             } else {
-              self.serverURL_setValidationMessage('MyMonero was not able to connect to the specified URL')
+              self.serverURL_setValidationMessage('Beldex was not able to connect to the specified URL')
             }
               // end check
           }
@@ -942,10 +942,10 @@ class SettingsView extends View {
                   // but don't exit before hiding the 'connecting…' indicator
                 }
                 self.serverURL_connecting_activityIndicatorLayer.style.display = 'none' // hide
-                if (self.context.settingsController.specificAPIAddressURLAuthority === 'https://api.mymonero.com') {
-                  self.serverURL_setSuccessMessage('Set to mymonero.com')
+                if (self.context.settingsController.specificAPIAddressURLAuthority === 'https://api.beldex.dev') {
+                  self.serverURL_setSuccessMessage('Set to Beldex')
                 } else {
-                  self.serverURL_setSuccessMessage('Custom server url set. Set to https://api.mymonero.com to use mymonero.com')
+                  self.serverURL_setSuccessMessage('Custom server url set. Set to https://api.beldex.dev to use Beldex')
                 }
               }
             )

@@ -58,7 +58,7 @@ class WalletsListView extends ListView {
     {
       const emptyStateMessageContainerView = commonComponents_emptyScreens.New_EmptyStateMessageContainerView(
         '😃',
-        "Welcome to MyMonero!<br/>Let's get started.",
+        "Welcome to Beldex!<br/>Let's get started.",
         self.context,
         0,
         0
@@ -169,7 +169,7 @@ class WalletsListView extends ListView {
   Navigation_Title () {
     const self = this
     if (!self.listController.records || !self.listController.records.length) { // ok to access this w/o checking boot cause should be [] pre boot and view invisible to user preboot
-      return 'MyMonero'
+      return 'Beldex'
     }
     return 'Wallets'
   }
