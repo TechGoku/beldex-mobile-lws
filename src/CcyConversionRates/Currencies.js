@@ -5,51 +5,13 @@ import beldex_amount_format_utils from '@bdxi/beldex-money-format'
 
 const ccySymbolsByCcy =
 {
-  XMR: 'XMR', // included for completeness / convenience / API
-  USD: 'USD',
-  AUD: 'AUD',
-  BRL: 'BRL',
-  CAD: 'CAD',
-  CHF: 'CHF',
-  CNY: 'CNY',
-  EUR: 'EUR',
-  GBP: 'GBP',
-  HKD: 'HKD',
-  INR: 'INR',
-  JPY: 'JPY',
-  KRW: 'KRW',
-  MXN: 'MXN',
-  NOK: 'NOK',
-  NZD: 'NZD',
-  SEK: 'SEK',
-  SGD: 'SGD',
-  TRY: 'TRY',
-  RUB: 'RUB',
-  ZAR: 'ZAR'
+  XMR: 'BDX' // included for completeness / convenience / API
+  
 }
 const allOrderedCurrencySymbols =
 [
-  ccySymbolsByCcy.XMR, // included for completeness / convenience / API
-  ccySymbolsByCcy.USD,
-  ccySymbolsByCcy.AUD,
-  ccySymbolsByCcy.BRL,
-  ccySymbolsByCcy.CAD,
-  ccySymbolsByCcy.CHF,
-  ccySymbolsByCcy.CNY,
-  ccySymbolsByCcy.EUR,
-  ccySymbolsByCcy.GBP,
-  ccySymbolsByCcy.HKD,
-  ccySymbolsByCcy.INR,
-  ccySymbolsByCcy.JPY,
-  ccySymbolsByCcy.KRW,
-  ccySymbolsByCcy.MXN,
-  ccySymbolsByCcy.NOK,
-  ccySymbolsByCcy.NZD,
-  ccySymbolsByCcy.SEK,
-  ccySymbolsByCcy.SGD,
-  ccySymbolsByCcy.TRY,
-  ccySymbolsByCcy.RUB,
-  ccySymbolsByCcy.ZAR
+  ccySymbolsByCcy.XMR // included for completeness / convenience / API
+ 
 ]
 const hasAtomicUnits = function (ccySymbol) {
   return (ccySymbol == ccySymbolsByCcy.XMR)

@@ -2500,7 +2500,7 @@ div.customSelect {}
   background-size: 24px 24px;
 }
 
-.tabButton-exchange {
+/* .tabButton-exchange {
   background-image: url('../img/XMRtoBTCInactive.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -2512,7 +2512,7 @@ div.customSelect {}
   background-position: center;
   background-repeat: no-repeat;
   background-size: 39px;
-}
+} */
 
 .tabButton-contacts {
   background-image: url('../img/icon_tabBar_contacts@3x.png');

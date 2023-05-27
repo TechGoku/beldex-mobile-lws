@@ -65,7 +65,8 @@ class ExchangeTabContentView extends StackAndModalNavigationView {
     const numberOf_wallets = wallets.length
     const walletsExist = numberOf_wallets !== 0
     const shallDisable = walletsExist == false // no wallets? disable
-    return shallDisable
+    // return shallDisable
+    return true
   }
 }
 export default ExchangeTabContentView
